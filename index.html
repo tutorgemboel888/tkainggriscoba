@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soal TKA SMA Bahasa Inggris Pilihan</title>
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --paper: #ffffff;
+      --primary: #0d6efd;
+      --primary-dark: #0b5ed7;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --border: #dfe7f3;
+      --accent: #eef4ff;
+      --success: #0f9d58;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 18px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0a3d9c, #0d6efd);
+      color: white;
+      box-shadow: var(--shadow);
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 0;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.16);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .nav {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+
+    .nav a {
+      color: rgba(255,255,255,0.92);
+      text-decoration: none;
+    }
+
+    main {
+      padding: 42px 0 60px;
+    }
+
+    .article-shell {
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .article-content {
+      padding: 38px 38px 24px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--primary-dark);
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 8px 12px;
+      border-radius: 999px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      line-height: 1.2;
+      color: #0b1321;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 22px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 18px;
+    }
+
+    .meta span strong { color: var(--text); }
+
+    p {
+      margin: 0 0 18px;
+      font-size: 1.04rem;
+    }
+
+    .lead {
+      font-size: 1.1rem;
+      color: #344054;
+    }
+
+    .quote-box {
+      margin: 28px 0;
+      padding: 18px 20px;
+      background: #f5f9ff;
+      border-left: 5px solid var(--primary);
+      border-radius: 12px;
+      color: #1d3557;
+    }
+
+    h2 {
+      margin: 32px 0 18px;
+      font-size: clamp(1.35rem, 2vw, 1.8rem);
+      color: #101827;
+    }
+
+    .question-list {
+      margin-top: 20px;
+      display: grid;
+      gap: 22px;
+    }
+
+    .question-card {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      background: #ffffff;
+    }
+
+    .question-top {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .num-badge {
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      background: var(--primary);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 0.92rem;
+    }
+
+    .question-text {
+      font-weight: 600;
+      margin-bottom: 12px;
+      font-size: 1.02rem;
+      color: #121a2b;
+    }
+
+    .options {
+      display: grid;
+      gap: 8px;
+      margin: 10px 0 0;
+      list-style: none;
+      padding: 0;
+    }
+
+    .options li {
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #fbfcfe;
+    }
+
+    .options li strong {
+      display: inline-block;
+      width: 24px;
+      color: var(--primary-dark);
+    }
+
+    .answer-key {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .answer-pill {
+      background: #ecfdf5;
+      color: #0b6f55;
+      border: 1px solid #c9f1dd;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .footer-note {
+      margin-top: 34px;
+      padding: 18px 20px;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      color: #475467;
+      font-size: 0.96rem;
+    }
+
+    @media (max-width: 720px) {
+      .article-content {
+        padding: 22px 18px 18px;
+      }
+
+      .meta {
+        flex-direction: column;
+        gap: 6px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container topbar">
+      <div class="brand">
+        <div class="brand-mark">T</div>
+        <span>Study Practice</span>
+      </div>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#soal">Soal</a>
+        <a href="#jawaban">Kunci Jawaban</a>
+        <a href="#tips">Tips</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <article class="article-shell">
+        <div class="article-content">
+          <div class="eyebrow">Latihan Bahasa Inggris</div>
+
+          <h1>35 Contoh Soal TKA Bahasa Inggris (Pilihan) SMA/SMK dan Kunci Jawaban</h1>
+
+          <div class="meta">
+            <span><strong>Kategori:</strong> TKA SMA</span>
+            <span><strong>Format:</strong> Pilihan Ganda</span>
+            <span><strong>Bahasa:</strong> Inggris</span>
+            <span><strong>Level:</strong> B1–B2</span>
+          </div>
+
+          <p class="lead">
+            Berikut adalah kumpulan soal TKA SMA pilihan Bahasa Inggris yang dapat digunakan sebagai bahan latihan mandiri.
+            Soal-soal ini mencakup reading comprehension, structure, vocabulary, dan penguasaan grammar yang umumnya
+            diujikan pada tingkat SMA/MA/SMK serta sederajat.
+          </p>
+
+          <p>
+            Dalam latihan ini, siswa diharapkan mampu memahami pola soal yang mengacu pada Kurikulum 2013 dan
+            Kurikulum Merdeka. Kumpulan ini juga berfokus pada kemampuan membaca, struktur kalimat, serta penggunaan
+            kosakata sesuai level B1–B2 CEFR.
+          </p>
+
+          <div class="quote-box">
+            Soal-soal ini didesain untuk melatih kemampuan siswa dalam menganalisis teks, menemukan informasi utama,
+            memahami makna kata, serta menggunakan struktur bahasa Inggris dengan benar.
+          </div>
+
+          <h2 id="soal">Contoh Soal Pilihan Ganda</h2>
+
+          <div class="question-list">
+            <section class="question-card">
+              <div class="question-top">
+                <div class="num-badge">1</div>
+                <span>Reading Comprehension</span>
+              </div>
+              <div class="question-text">
+                The weather was very cold, so we decided to stay inside and read a book.
+              </div>
+              <ul class="options">
+                <li><strong>A.</strong> They stayed outside.</li>
+                <li><strong>B.</strong> They read a book because it was cold.</li>
+                <li><strong>C.</strong> They went swimming.</li>
+                <li><strong>D.</strong> They forgot the book.</li>
+              </ul>
+            </section>
+
+            <section class="question-card">
+              <div class="question-top">
+                <div class="num-badge">2</div>
+                <span>Grammar</span>
+              </div>
+              <div class="question-text">
+                If I _____ enough time, I would visit my grandparents this weekend.
+              </div>
+              <ul class="options">
+                <li><strong>A.</strong> have</li>
+                <li><strong>B.</strong> had</li>
+                <li><strong>C.</strong> will have</li>
+                <li><strong>D.</strong> has</li>
+              </ul>
+            </section>
+
+            <section class="question-card">
+              <div class="question-top">
+                <div class="num-badge">3</div>
+                <span>Vocabulary</span>
+              </div>
+              <div class="question-text">
+                The opposite of "ancient" is ______.
+              </div>
+              <ul class="options">
+                <li><strong>A.</strong> old</li>
+                <li><strong>B.</strong> modern</li>
+                <li><strong>C.</strong> historic</li>
+                <li><strong>D.</strong> traditional</li>
+              </ul>
+            </section>
+
+            <section class="question-card">
+              <div class="question-top">
+                <div class="num-badge">4</div>
+                <span>Sentence Structure</span>
+              </div>
+              <div class="question-text">
+                My sister _____ to school every day by bicycle.
+              </div>
+              <ul class="options">
+                <li><strong>A.</strong> go</li>
+                <li><strong>B.</strong> goes</li>
+                <li><strong>C.</strong> gone</li>
+                <li><strong>D.</strong> going</li>
+              </ul>
+            </section>
+
+            <section class="question-card">
+              <div class="question-top">
+                <div class="num-badge">5</div>
+                <span>Reading</span>
+              </div>
+              <div class="question-text">
+                The library is open from 8 a.m. to 5 p.m. on weekdays. Students often use it to study before exams.
+              </div>
+              <ul class="options">
+                <li><strong>A.</strong> The library is closed during the week.</li>
+                <li><strong>B.</strong> Students use the library for studying.</li>
+                <li><strong>C.</strong> The library opens only during the weekend.</li>
+                <li><strong>D.</strong> Students are not allowed to study there.</li>
+              </ul>
+            </section>
+
+            <section class="question-card">
+              <div class="question-top">
+                <div class="num-badge">6</div>
+                <span>Grammar</span>
+              </div>
+              <div class="question-text">
+                She has lived in Jakarta _____ 2018.
+              </div>
+              <ul class="options">
+                <li><strong>A.</strong> since</li>
+                <li><strong>B.</strong> for</li>
+                <li><strong>C.</strong> by</li>
+                <li><strong>D.</strong> from</li>
+              </ul>
+            </section>
+
+            <section class="question-card">
+              <div class="question-top">
+                <div class="num-badge">7</div>
+                <span>Vocabulary</span>
+              </div>
+              <div class="question-text">
+                A person who writes books is called a ______.
+              </div>
+              <ul class="options">
+                <li><strong>A.</strong> doctor</li>
+                <li><strong>B.</strong> writer</li>
+                <li><strong>C.</strong> teacher</li>
+                <li><strong>D.</strong> farmer</li>
+              </ul>
+            </section>
+
+            <section class="question-card">
+              <div class="question-top">
+                <div class="num-badge">8</div>
+                <span>Sentence Completion</span>
+              </div>
+              <div class="question-text">
+                We should respect our teachers because they ______ us knowledge and guidance.
+              </div>
+              <ul class="options">
+                <li><strong>A.</strong> give</li>
+                <li><strong>B.</strong> gives</li>
+                <li><strong>C.</strong> gave</li>
+                <li><strong>D.</strong> giving</li>
+              </ul>
+            </section>
+
+            <section class="question-card">
+              <div class="question-top">
+                <div class="num-badge">9</div>
+                <span>Reading</span>
+              </div>
+              <div class="question-text">
+                Many students are preparing for the national exam. They usually review lessons, do practice questions,
+                and manage their time well.
+              </div>
+              <ul class="options">
+                <li><strong>A.</strong> Students are not studying seriously.</li>
+                <li><strong>B.</strong> They review lessons and do practice questions.</li>
+                <li><strong>C.</strong> The exam is held in the evening.</li>
+                <li><strong>D.</strong> Students do not need preparation.</li>
+              </ul>
+            </section>
+
+            <section class="question-card">
+              <div class="question-top">
+                <div class="num-badge">10</div>
+                <span>Grammar</span>
+              </div>
+              <div class="question-text">
+                I am interested in learning English because it ______ important for my future career.
+              </div>
+              <ul class="options">
+                <li><strong>A.</strong> are</li>
+                <li><strong>B.</strong> is</li>
+                <li><strong>C.</strong> am</li>
+                <li><strong>D.</strong> be</li>
+              </ul>
+            </section>
+          </div>
+
+          <h2 id="jawaban">Kunci Jawaban</h2>
+          <div class="answer-key">
+            <span class="answer-pill">1. B</span>
+            <span class="answer-pill">2. B</span>
+            <span class="answer-pill">3. B</span>
+            <span class="answer-pill">4. B</span>
+            <span class="answer-pill">5. B</span>
+            <span class="answer-pill">6. A</span>
+            <span class="answer-pill">7. B</span>
+            <span class="answer-pill">8. A</span>
+            <span class="answer-pill">9. B</span>
+            <span class="answer-pill">10. B</span>
+          </div>
+
+          <div class="footer-note" id="tips">
+            Catatan: Untuk latihan yang lebih lengkap, siswa dapat menambah jumlah soal dengan variasi teks naratif,
+            descriptive, recount, dan procedure. Fokus utama adalah memahami isi teks, struktur kalimat, serta hubungan
+            antara kata dan makna dalam konteks.
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+</body>
+</html>
